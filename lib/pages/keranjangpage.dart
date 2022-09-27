@@ -36,7 +36,7 @@ class KeranjangPage extends StatelessWidget {
             Navigator.pop(context);
           },
         ),
-        backgroundColor: bgColor2,
+        backgroundColor: bgColor6,
         elevation: 0,
       );
     }
@@ -52,7 +52,7 @@ class KeranjangPage extends StatelessWidget {
       );
     }
 
-    Widget customButtomNav() {
+    Widget customBottomNav() {
       return Container(
         decoration: BoxDecoration(
           color: bgColor4,
@@ -111,7 +111,7 @@ class KeranjangPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Image.asset(
-                        'assets/Vector.png',
+                        'assets/Vector(2).png',
                         height: 20,
                       ),
                       SizedBox(
@@ -151,8 +151,8 @@ class KeranjangPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Image.asset(
-                    'assets/Vector1.png',
-                    height: 25,
+                    'assets/Vector(3).png',
+                    height: 15,
                   ),
                   SizedBox(
                     width: 12,
@@ -178,7 +178,7 @@ class KeranjangPage extends StatelessWidget {
                   ),
                   Container(
                     // margin: EdgeInsets.symmetric(horizontal: defaultMargin),
-                    height: 50,
+                    height: 40,
                     child: TextButton(
                       onPressed: handleCheckout,
                       style: TextButton.styleFrom(
@@ -187,14 +187,14 @@ class KeranjangPage extends StatelessWidget {
                           horizontal: 20,
                         ),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(25),
+                          borderRadius: BorderRadius.circular(20),
                         ),
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Bayar Sekarang',
+                            'Pesan Sekarang',
                             style: secondarytextcolor.copyWith(
                               fontSize: 16,
                             ),
@@ -212,11 +212,10 @@ class KeranjangPage extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: bgColor2,
+      backgroundColor: bgColor6,
       appBar: header(),
       body: content(),
-      bottomNavigationBar:
-          cp.carts.length == 0 ? SizedBox() : customButtomNav(),
+      bottomNavigationBar: customBottomNav(),
     );
   }
 }
