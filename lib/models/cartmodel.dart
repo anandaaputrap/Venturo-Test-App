@@ -3,14 +3,14 @@ import 'package:venturomalang/models/vouchermoder.dart';
 
 class CartModel {
   int id;
-  ProdukModel produk;
+  ProdukModel product;
   VoucherModel vocer;
   int jumlahpesan;
   String note;
 
   CartModel({
     this.id,
-    this.produk,
+    this.product,
     this.vocer,
     this.jumlahpesan,
     this.note,
@@ -18,7 +18,7 @@ class CartModel {
 
   CartModel.fromJson(Map<String, dynamic> json) {
     id = json['id'].toInt();
-    produk = ProdukModel.fromJson(json['product']);
+    product = ProdukModel.fromJson(json['product']);
     vocer = VoucherModel.fromJson(json['vocer']);
     jumlahpesan = json['jumlahpesan'].toInt();
     note = json['note'];
@@ -27,7 +27,7 @@ class CartModel {
   Map<String, dynamic> toJson() {
     return {
       'id': id,
-      'product': produk.toJson(),
+      'product': product.toJson(),
       'vocer': vocer.toJson(),
       'jumlahpesan': jumlahpesan,
       'note': note,
@@ -35,6 +35,6 @@ class CartModel {
   }
 
   double getTotalPrice() {
-    return produk.harga * jumlahpesan;
+    return product.harga * jumlahpesan;
   }
 }

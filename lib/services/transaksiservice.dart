@@ -21,9 +21,9 @@ class TransaksiService {
         'items': carts
             .map(
               (cart) => {
-                'id': cart.produk.id,
-                'harga': cart.produk.harga,
-                'note': cart.note,
+                'id': cart.product.id,
+                'harga': cart.product.harga,
+                'catatan': cart.note,
               },
             )
             .toList(),

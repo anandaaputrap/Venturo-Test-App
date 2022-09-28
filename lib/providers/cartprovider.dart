@@ -14,13 +14,13 @@ class CartProvider with ChangeNotifier {
   addCart(ProdukModel product) {
     if (productExist(product)) {
       int index =
-          _carts.indexWhere((element) => element.produk.id == product.id);
+          _carts.indexWhere((element) => element.product.id == product.id);
       _carts[index].jumlahpesan++;
     } else {
       _carts.add(
         CartModel(
           id: _carts.length,
-          produk: product,
+          product: product,
           jumlahpesan: 1,
           note: "Tidak Ada Catatan",
         ),
@@ -63,13 +63,13 @@ class CartProvider with ChangeNotifier {
   totalPrice() {
     double total = 0;
     for (var item in _carts) {
-      total += (item.jumlahpesan * item.produk.harga);
+      total += (item.jumlahpesan * item.product.harga);
     }
     return total;
   }
 
   productExist(ProdukModel product) {
-    if (_carts.indexWhere((element) => element.produk.id == product.id) ==
+    if (_carts.indexWhere((element) => element.product.id == product.id) ==
         -1) {
       return false;
     } else {

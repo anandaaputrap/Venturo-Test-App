@@ -37,7 +37,7 @@ class KeranjangCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12),
                   image: DecorationImage(
                     image: NetworkImage(
-                      cart.produk.gambar,
+                      cart.product.gambar,
                     ),
                   ),
                 ),
@@ -50,14 +50,14 @@ class KeranjangCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      cart.produk.nama,
+                      cart.product.nama,
                       style: primarytextcolor.copyWith(
                         fontWeight: semibold,
                       ),
                     ),
                     Text(
                       NumberFormat.simpleCurrency(name: 'Rp ', decimalDigits: 0)
-                          .format(cart.produk.harga),
+                          .format(cart.product.harga),
                       style: primarypricecolor,
                     ),
                     Row(
