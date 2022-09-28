@@ -31,8 +31,8 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         routes: {
-          '/': (context) => KeranjangPage(),
-          '/checkout': (context) => CheckoutPage(),
+          '/': (context) => CheckoutPage(),
+          '/checkout': (context) => KeranjangPage(),
         },
       ),
     );

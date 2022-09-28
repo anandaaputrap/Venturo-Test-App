@@ -12,8 +12,7 @@ class KeranjangPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     CartProvider cp = Provider.of<CartProvider>(context);
-    TransaksiProvider tp =
-        Provider.of<TransaksiProvider>(context);
+    TransaksiProvider tp = Provider.of<TransaksiProvider>(context);
 
     handleCheckout() async {
       if (await tp.checkout(
@@ -144,7 +143,7 @@ class KeranjangPage extends StatelessWidget {
             ),
             Container(
               margin: EdgeInsets.symmetric(
-                horizontal: defaultmargin,
+                horizontal: 10,
                 vertical: 10,
               ),
               child: Row(
@@ -177,7 +176,6 @@ class KeranjangPage extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    // margin: EdgeInsets.symmetric(horizontal: defaultMargin),
                     height: 40,
                     child: TextButton(
                       onPressed: handleCheckout,

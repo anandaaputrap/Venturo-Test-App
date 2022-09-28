@@ -12,8 +12,7 @@ import 'package:venturomalang/widgets/checkoutcard.dart';
 class CheckoutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    ProdukProvider pp =
-        Provider.of<ProdukProvider>(context);
+    ProdukProvider pp = Provider.of<ProdukProvider>(context);
     CartProvider cp = Provider.of<CartProvider>(context);
     VoucherProvider vp = Provider.of<VoucherProvider>(context);
 
@@ -24,7 +23,7 @@ class CheckoutPage extends StatelessWidget {
 
     Widget header() {
       return AppBar(
-        backgroundColor: bgColor2,
+        backgroundColor: bgColor6,
         elevation: 0,
         centerTitle: true,
       );
@@ -41,7 +40,7 @@ class CheckoutPage extends StatelessWidget {
       );
     }
 
-    Widget customButtomNav() {
+    Widget customBottomNav() {
       return Container(
         decoration: BoxDecoration(
           color: bgColor4,
@@ -75,9 +74,6 @@ class CheckoutPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(
-                    width: 10,
-                  ),
                   Text(
                     NumberFormat.simpleCurrency(name: 'Rp ', decimalDigits: 0)
                         .format(cp.totalPrice()),
@@ -103,7 +99,7 @@ class CheckoutPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Image.asset(
-                        'assets/Vector.png',
+                        'assets/Vector(2).png',
                         height: 20,
                       ),
                       SizedBox(
@@ -136,15 +132,15 @@ class CheckoutPage extends StatelessWidget {
             ),
             Container(
               margin: EdgeInsets.symmetric(
-                horizontal: defaultmargin,
-                vertical: 9,
+                horizontal: 10,
+                vertical: 10,
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Image.asset(
-                    'assets/Vector1.png',
-                    height: 25,
+                    'assets/Vector(3).png',
+                    height: 15,
                   ),
                   SizedBox(
                     width: 12,
@@ -170,7 +166,7 @@ class CheckoutPage extends StatelessWidget {
                   ),
                   Container(
                     // margin: EdgeInsets.symmetric(horizontal: defaultMargin),
-                    height: 50,
+                    height: 40,
                     child: TextButton(
                       onPressed: () {
                         Navigator.pushNamed(context, '/checkout');
@@ -181,7 +177,7 @@ class CheckoutPage extends StatelessWidget {
                           horizontal: 20,
                         ),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(25),
+                          borderRadius: BorderRadius.circular(20),
                         ),
                       ),
                       child: Row(
@@ -206,10 +202,10 @@ class CheckoutPage extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: bgColor2,
+      backgroundColor: bgColor6,
       appBar: header(),
       body: content(),
-      bottomNavigationBar: customButtomNav(),
+      bottomNavigationBar: customBottomNav(),
       resizeToAvoidBottomInset: false,
     );
   }
